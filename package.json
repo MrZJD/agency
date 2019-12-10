@@ -1,0 +1,35 @@
+{
+  "name": "agency",
+  "version": "1.0.0",
+  "description": "common http(s) agency proxy (hosts & nginx)",
+  "main": "src/index.js",
+  "bin": {
+    "agency": "src/index.js"
+  },
+  "scripts": {
+    "start": "node ./src/script/start.js",
+    "stop": "node ./src/script/stop.js",
+    "reload": "node ./src/script/reload.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrZJD/agency.git"
+  },
+  "keywords": [
+    "proxy",
+    "http(s)",
+    "node.js",
+    "javascript"
+  ],
+  "author": "mrzjd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrZJD/agency/issues"
+  },
+  "homepage": "https://github.com/MrZJD/agency#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "glob": "^7.1.6",
+    "log4js": "^6.1.0"
+  }
+}

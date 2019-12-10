@@ -7,8 +7,8 @@
 ```md
 1. 本机开启代理 `127.0.0.1:1377`
 2. 启用agency服务 `npm start`
-3. 重启agency服务 `npm reload`
-4. 关闭agency服务 `npm stop`
+3. 关闭agency服务 `npm stop`
+4. 重启agency服务 `npm run reload`
 ```
 
 ### Proxy配置
@@ -20,6 +20,6 @@
 _test.agency.json_
 ```json
 {
-    "agency.com": "127.0.0.1:9090"
+    "agency.com": "127.0.0.1:1377"
 }
 ```

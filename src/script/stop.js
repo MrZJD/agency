@@ -21,7 +21,11 @@ function main () {
         return
     }
 
-    process.kill(pid, 'SIGINT')
+    try {
+        process.kill(pid, 'SIGINT')
+    } catch (e) {
+        console.log('error: ' + e.stack)
+    }
 
     try {
         unlinkSync(PID_FILE)

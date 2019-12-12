@@ -1,7 +1,7 @@
 
 /**
  * @function
- * @description 从req获取出host以外的字段
+ * @description 将rawHeaders转为字符串
  * @param {[string]} rawHeaders
  */
 function getRawHeaders (rawHeaders) {

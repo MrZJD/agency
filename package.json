@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node ./src/script/start.js",
     "stop": "node ./src/script/stop.js",
-    "reload": "node ./src/script/reload.js"
+    "reload": "node ./src/script/reload.js",
+    "dev": "node ./src/index.js"
   },
   "repository": {
     "type": "git",

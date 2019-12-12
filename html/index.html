@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>agency.node.js</title>
+    <style>
+        body {
+            background-color: #fafafa;
+        }
+        .welcome {
+            max-width: 960px;
+            margin: 0 auto;
+            font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+        }
+        .h1 {
+            font-size: 30px;
+            margin: 16px 0;
+            letter-spacing: 2px;
+            color: #4d4d4d;
+            padding: 0 4px;
+        }
+        .h3 {
+            font-size: 22px;
+            margin: 30px 0 16px;
+            letter-spacing: 2px;
+            color: #4d4d4d;
+            padding: 0 4px;
+        }
+        .sep {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .info {
+            font-size: 18px;
+            padding: 0 4px;
+            font-style: italic;
+            color: #555;
+        }
+        .notion {
+            border-left: 2px solid #339999;
+            padding: 6px 10px;
+            margin: 10px 0;
+            background: #eaeaea;
+            color: #444;
+        }
+        pre {
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+        }
+        code {
+            line-height: 22px;
+        }
+        .it {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome">
+        <p class="h1">agency.node.js</p>
+        <div class="sep"></div>
+        <div class="notion">使用node.js编写的代理服务，为解决hosts切换&nginx的部分代理功能不够灵活的问题</div>
+        <p class="h3">Usage 开始使用</p>
+        <pre><code>1. 本机开启代理 127.0.0.1:1377
+2. 启用agency服务 npm start
+3. 关闭agency服务 npm stop
+4. 重启agency服务 npm run reload</code></pre>
+
+        <p class="tiper">浏览器代理推荐使用 ProxySwitchySharp</p>
+
+        <p class="h3">Proxy配置</p>
+        <p class="tiper">在config目录下新建不同环境的配置文件</p>
+        <p class="tiper">推荐规范 <span class="it">[env].[server_name].json</span></p>
+
+        <div class="sep" style="margin-top: 60px;"></div>
+        <p class="info">author: mrzjd</p>
+        <p class="info">email: 390303304@qq.com</p>
+        <p class="info">github: <a href="https://github.com/MrZJD/agency">https://github.com/MrZJD/agency</a></p>
+    </div>
+</body>
+</html>

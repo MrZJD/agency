@@ -4,7 +4,7 @@ const ProxyTransfomer = require('../../class/ProxyTransfomer')
  * @constant
  * @description => 响应客户端的HTTP HEADERS (basic + proxy info)
  */
-const HTTP_HEADER_PROXY_AGENT = Buffer.from('\r\nProxy-Agent: lumos')
+const HTTP_HEADER_PROXY_AGENT = Buffer.from('\r\nProxy-Agent: agency.node.js')
 
 /**
  * @constant

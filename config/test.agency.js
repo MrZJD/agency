@@ -1,25 +1,3 @@
-## agency
-
-> 代理服务: 解决hosts切换&nginx的部分代理功能不够灵活的问题
-
-### Usage 开始使用
-
-```md
-1. 本机开启代理 `127.0.0.1:1377`
-2. 启用agency服务 `npm start`
-3. 关闭agency服务 `npm stop`
-4. 重启agency服务 `npm run reload`
-```
-
-浏览器代理推荐使用 _ProxySwitchySharp_
-
-### Proxy配置
-
-在config目录下新建不同环境的配置文件
-
-推荐规范 `[env].[server_name].json`
-
-```js
 /**
  * @file
  * @description 代理配置表
@@ -38,4 +16,3 @@ module.exports = {
     "http(s)?://proxy.mrzjd.cn": "127.0.0.1:9998",
     // "nodejs.cn/"
 }
-```

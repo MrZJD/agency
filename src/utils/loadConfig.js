@@ -12,7 +12,7 @@ function getConf () {
         if (conf) return Promise.resolve(conf)
 
         return new Promise((resolve, reject) => {
-            return glob(path.resolve(__dirname, '../../config/*.json'), function (err, result) {
+            return glob(path.resolve(__dirname, '../../config/*.@(js|json)'), function (err, result) {
                 if (err) {
                     reject(err)
                     return

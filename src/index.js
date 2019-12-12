@@ -13,9 +13,9 @@ httpProxy.run()
 // })
 
 process.on('uncaughtException', (err) => {
-    try {
-        appendFileSync(PROCESS_FILE, err.stack)
-    } catch (e) {}
+    // try {
+    //     appendFileSync(PROCESS_FILE, err.stack)
+    // } catch (e) {}
 
-    process.exit()
+    // process.exit()
 })

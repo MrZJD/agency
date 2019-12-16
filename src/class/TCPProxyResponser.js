@@ -95,7 +95,8 @@ class TCPProxyResponser {
             srvSocket.on('error', (err) => {
                 elog.error(`fail: ${url}\r\n${err.stack}`)
     
-                this.cltSocket.end('HTTP/1.1 500 agency.node.js Failed\r\n')
+                !this.cltSocket.destroyed &&
+                    this.cltSocket.end('HTTP/1.1 500 agency.node.js Failed\r\n')
             })
         })
     }
@@ -153,20 +154,24 @@ class TCPProxyResponser {
     /**
      * @method
      * @description 文件模式
-     * @param {import('http').IncomingMessage} req 
-     * @param {import('http').ServerResponse} res 
      */
-    file (req, res) {
-        res.writeHead(200, 'ok', {
-            'Content-Type': 'text/html'
-        })
+    file () {
+        this.cltSocket.write(
+            Buffer.from(
+                [
+                    'HTTP/1.1 200 OK',
+                    'Content-Type: text/html',
+                    'Proxy: agency.node.js'
+                ].join('\r\n')
+            )
+        )
 
         let fileRoot = this.target.replace(FILE_RE, '')
-        let filePath = new URL(req.url).pathname
+        let filePath = new URL(this.status.url).pathname
 
         let fileUri = path.resolve(fileRoot, filePath === '/' ? './index.html' : ('./' + filePath))
 
-        access(fileUri, function (err) {
+        access(fileUri, (err) => {
             if (err) {
                 // 文件不存在
                 alog.info(`[file] 404 not found ${fileUri}`)
@@ -178,12 +183,12 @@ class TCPProxyResponser {
             // 文件存在
             let srvStream = createReadStream(fileUri)
 
-            srvStream.on('data', function (chunk) {
-                res.write(chunk)
+            srvStream.on('data', (chunk) => {
+                this.cltSocket.write(chunk)
             })
 
-            srvStream.on('end', function () {
-                res.end()
+            srvStream.on('end', () => {
+                this.cltSocket.end()
             })
         })
     }
@@ -192,12 +197,12 @@ class TCPProxyResponser {
      * @method
      * @description 代理服务器模式
      */
-    proxy () {
+    proxy (chunk) {
         let url = this.status.url
 
-        alog.info(`[direct] ${url}`)
+        alog.info(`[proxy] ${url}`)
 
-        this.requestSrv('http://' + this.target)
+        this.requestSrv(this.isHttps ? this.target : ('http://' + this.target))
             .then((s) => this.handleSrv(s, chunk))
     }
 
@@ -215,7 +220,7 @@ class TCPProxyResponser {
     }
 
     resolveMode () {
-        this.target = this.conf.handle(this.status.url)
+        this.target = this.conf.handle(this.isHttps ? ('https://' + this.status.url) : this.status.url)
 
         if (!this.target) {
             this.mode = MODE_DIRECT

@@ -9,7 +9,7 @@ tcpProxy.run()
 
 process.on('uncaughtException', (err) => {
     try {
-        appendFileSync(PROCESS_FILE, err.stack)
+        appendFileSync(PROCESS_FILE, err.stack + '\r\n')
     } catch (e) {}
 
     process.exit()

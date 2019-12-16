@@ -10,18 +10,18 @@ module.exports = (flag = red('DEBUG: ')) => new ProxyTransfomer(null, function (
     let headers = null
 
     return function (data, encoding) {
-        console.log(flag + '=====')
+        console.log('DEBUG: ')
 
-        if (!headers) {
-            headers = parseHeader(data)
-        }
+        // if (!headers) {
+        //     headers = parseHeader(data)
+        // }
 
-        parseChunk(data, headers, encoding).then((content) => {
-            console.log(flag)
-            console.log(content)
-        })
+        // parseChunk(data, headers, encoding).then((content) => {
+        //     console.log(flag)
+        //     console.log(content)
+        // })
 
-        console.log(flag + '=====')
+        // console.log(flag + '=====')
 
         return data
     }

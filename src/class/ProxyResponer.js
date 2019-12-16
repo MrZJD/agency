@@ -1,3 +1,8 @@
+/**
+ * @file http 响应器
+ * @deprecated 已改为基于tcp的响应器 参考TCPProxyResponse.js
+ */
+
 const { connect } = require('net')
 const { URL } = require('url')
 const { access, createReadStream } = require('fs')

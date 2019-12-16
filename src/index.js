@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 const { appendFileSync } = require('fs')
 const { resolve } = require('path')
-const httpProxy = require('./http')
+const tcpProxy = require('./tcp')
 
 const PROCESS_FILE = resolve(__dirname, '../.output')
 
-httpProxy.run()
+tcpProxy.run()
 
-process.on('uncaughtException', (err) => {
-    try {
-        appendFileSync(PROCESS_FILE, err.stack)
-    } catch (e) {}
+// process.on('uncaughtException', (err) => {
+//     try {
+//         appendFileSync(PROCESS_FILE, err.stack)
+//     } catch (e) {}
 
-    process.exit()
-})
+//     process.exit()
+// })

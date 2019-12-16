@@ -12,7 +12,7 @@
  * 非文件时 会把path拼凑进目标节点路径后 
  */
 module.exports = {
-    "http(s)?://file.mrzjd.cn": "file://E:/laboratory/repo/agency/html/",
-    "http(s)?://proxy.mrzjd.cn": "127.0.0.1:9998",
-    // "nodejs.cn/"
+    "http://file.mrzjd.cn": "file://E:/laboratory/repo/agency/html/",
+    "http://proxy.mrzjd.cn": "127.0.0.1:9998",
+    "https://proxy.mrzjd.cn": "127.0.0.1:9997",
 }

@@ -7,10 +7,10 @@ const PROCESS_FILE = resolve(__dirname, '../.output')
 
 tcpProxy.run()
 
-// process.on('uncaughtException', (err) => {
-//     try {
-//         appendFileSync(PROCESS_FILE, err.stack)
-//     } catch (e) {}
+process.on('uncaughtException', (err) => {
+    try {
+        appendFileSync(PROCESS_FILE, err.stack)
+    } catch (e) {}
 
-//     process.exit()
-// })
+    process.exit()
+})

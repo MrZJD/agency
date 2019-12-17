@@ -161,7 +161,7 @@ class TCPProxyResponser {
                 [
                     'HTTP/1.1 200 OK',
                     'Content-Type: text/html',
-                    'Proxy: agency.node.js'
+                    'Proxy-Agent: agency.node.js'
                 ].join('\r\n')
             )
         )

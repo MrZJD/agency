@@ -15,4 +15,5 @@ module.exports = {
     "http://file.mrzjd.cn": "file://E:/laboratory/repo/agency/html/",
     "http://proxy.mrzjd.cn": "127.0.0.1:9998",
     "https://proxy.mrzjd.cn": "127.0.0.1:9997",
+    "http://static.tuho.tv": "183.15.176.19:8888"
 }

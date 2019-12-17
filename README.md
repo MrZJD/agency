@@ -5,7 +5,7 @@
 ### Usage 开始使用
 
 ```md
-1. 本机开启代理 `127.0.0.1:1377`
+1. 本机开启代理 `127.0.0.1:1337`
 2. 启用agency服务 `npm start`
 3. 关闭agency服务 `npm stop`
 4. 重启agency服务 `npm run reload`

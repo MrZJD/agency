@@ -31,6 +31,6 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "glob": "^7.1.6",
-    "log4js": "^6.1.0"
+    "log4js": "^6.4.0"
   }
 }
